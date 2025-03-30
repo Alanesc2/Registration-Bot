@@ -23,5 +23,5 @@ By using the registration time, the script will not commence 5 minutes before th
 3. To use this program, open up a terminal and type: git clone
 (Make sure to have git downloaded before cloning or download ZIP folder)
 4. In a terminal, navigate to directory and type: pip install -r requirements.txt
-5. Run code by typing: python/python3 registration.py
+5. Run code by typing: python/python3 enroll.py
 6. Make sure you have inputted the correct information, and you should be ready to enroll in your ideal schedule.
