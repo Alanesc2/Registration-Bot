@@ -1,27 +1,68 @@
-# ASU Registration-Bot
-Automated bot for ASU's course registration portal
+# ASU Registration Bot
 
-##About
-Registering for the next semester's courses is essential, as one of the main priorities is getting a flexible schedule and academic requirements. However, due to lack of reminders and enroll opening during the peak of a semester, students often forget to enroll or fail to enroll with time (regardless if off by seconds). Most of the class registrations occur at 6 AM, an inconvenient time for many students. This leads to students forced to take classes outsie of their schedule or not be able to enroll in a required class. Due to my personal struggle and my peers' continuous struggles with enrolling, I became driven to learn webscraping/automation using Python.
+Automated bot for ASU's course registration portal.
 
-##Program
-First, it will check to see if the necessary Chrome driver for Selenium is within the directory. If undefined, it will grab the driver from their repositories.
+## About
+Registering for next semester's courses is crucial to securing a flexible schedule and fulfilling academic requirements. However, many students forget to enroll on time due to a lack of reminders or the inconvenient early morning registration times (often at **6 AM**). Missing registration by even a few seconds can force students into less desirable class times or prevent them from enrolling in required courses.
 
-The user will be asked to provide:
-- Username
-- Password
-- Registration Time
-- Semester to enroll in
+This bot was developed to automate the registration process, inspired by my own struggles and those of my peers. It utilizes **Python, Selenium, and Web Scraping** to enroll in classes instantly when registration opens.
 
-From here, the script will use Selelium and Time libraries to enroll in the classes already in the shopping cart immediately once registration time comes. 
+## How It Works
+1. Checks for the necessary **Chrome driver** for Selenium. If not found, it downloads the correct version automatically.
+2. Prompts the user for:
+   - ASU **Username**
+   - ASU **Password**
+   - **Registration Time**
+   - **Semester** to enroll in
+3. Waits until **5 minutes before** the registration time and then actively monitors until the exact moment to register.
+4. Automatically logs in and submits the enrollment request for the classes **already in your shopping cart**.
 
-By using the registration time, the script will not commence 5 minutes before the registration time, however, it will run from when you start the program until then (Do not run it more than a day before registration)
+## Prerequisites
+- **Google Chrome** (must be installed and up-to-date)
+- **Python** (3.7 or later)
+- **Git** (for cloning the repository)
 
-##Instructions
-1. Make sure you have selected the classes you want to enroll in, and double check they are actually in the cart in the registration portal.
-2. For this programm, Google Chrome browser is needed. If not installed, make sure to install before running. If installed, make sure it is updated accordingly.
-3. To use this program, open up a terminal and type: <br> 'git clone https://github.com/Alanesc2/Registration-Bot.git' </br>
-(Make sure to have git downloaded before cloning or download ZIP folder)
-4. In a terminal, navigate to directory and type: pip install -r requirements.txt
-5. Run code by typing: python/python3 enroll.py
-6. Make sure you have inputted the correct information, and you should be ready to enroll in your ideal schedule.
+## Installation & Setup
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Alanesc2/Registration-Bot.git
+cd Registration-Bot
+```
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the Program
+```bash
+python enroll.py  # Use 'python3' if needed
+```
+
+## Important Notes
+- **Before running the bot, ensure that your desired classes are already in the shopping cart** on the ASU registration portal.
+- The program will wait until 5 minutes before your specified registration time to begin the automation process.
+- Do **not** run the bot more than **a day before** registration.
+
+## Troubleshooting
+- If the bot is not working correctly, ensure that:
+  - Google Chrome is installed and up to date.
+  - All required Python packages are installed (`pip install -r requirements.txt`).
+  - You have entered the correct login credentials and registration time.
+
+## Disclaimer
+This bot is intended for **personal use only**. Use responsibly and ensure compliance with ASU's registration policies.
+
+---
+
+### Future Improvements
+- **Error Handling Enhancements**: Improve handling of website structure changes.
+- **Multi-Semester Support**: Automate selection for multiple semesters.
+- **GUI Interface**: Create a user-friendly graphical interface for ease of use.
+
+---
+
+Developed by **Alan Escudero**
+
+---
