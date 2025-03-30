@@ -58,7 +58,7 @@ This bot is intended for **personal use only**. Use responsibly and ensure compl
 
 ### Future Improvements
 - **Error Handling Enhancements**: Improve handling of website structure changes.
-- **Multi-Semester Support**: Automate selection for multiple semesters.
+- **Virtual Environment**: Allows users to schedule enrollment in more than one day advance without having to run program locally.
 - **GUI Interface**: Create a user-friendly graphical interface for ease of use.
 
 ---
