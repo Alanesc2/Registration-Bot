@@ -20,7 +20,7 @@ By using the registration time, the script will not commence 5 minutes before th
 ##Instructions
 1. Make sure you have selected the classes you want to enroll in, and double check they are actually in the cart in the registration portal.
 2. For this programm, Google Chrome browser is needed. If not installed, make sure to install before running. If installed, make sure it is updated accordingly.
-3. To use this program, open up a terminal and type: git clone
+3. To use this program, open up a terminal and type: <br> 'git clone https://github.com/Alanesc2/Registration-Bot.git' </br
 (Make sure to have git downloaded before cloning or download ZIP folder)
 4. In a terminal, navigate to directory and type: pip install -r requirements.txt
 5. Run code by typing: python/python3 enroll.py
