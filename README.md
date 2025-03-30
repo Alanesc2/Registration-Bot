@@ -43,6 +43,7 @@ python enroll.py  # Use 'python3' if needed
 ## Important Notes
 - **Before running the bot, ensure that your desired classes are already in the shopping cart** on the ASU registration portal.
 - The program will wait until 5 minutes before your specified registration time to begin the automation process.
+- DUO Authentication is still required if prompted
 - Do **not** run the bot more than **a day before** registration.
 
 ## Troubleshooting
@@ -59,6 +60,7 @@ This bot is intended for **personal use only**. Use responsibly and ensure compl
 ### Future Improvements
 - **Error Handling Enhancements**: Improve handling of website structure changes.
 - **Virtual Environment**: Allows users to schedule enrollment in more than one day advance without having to run program locally.
+- **Autonomous Authentication**: Allows bot to be fully automated without requiring authentication from user.
 - **GUI Interface**: Create a user-friendly graphical interface for ease of use.
 
 ---
