@@ -1,4 +1,4 @@
-# ASU Registration Bot
+# University Registration Bot
 
 Automated bot for ASU's course registration portal.
 
