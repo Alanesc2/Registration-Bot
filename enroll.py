@@ -34,12 +34,12 @@ def get_user_input():
     if 2 <= reg_time.month <= 7:
         semester = input(f"Are you registering for Fall {reg_time.year}? Say yes if so, otherwise (YYYY Semester): ")
         if (semester == "yes"):
-            semester = "{reg_time.year} Fall"
+            semester = f"{reg_time.year} Fall"
     
     else:
         semester = input(f"Are you registering for spring {reg_time.year}? Say yes if so, otherwise (Semester/YYYY): ")
         if (semester == "yes"):
-            semester = "{reg_time.year} Spring"
+            semester = f"{reg_time.year} Spring"
 
     return username, password, reg_time, semester
 
@@ -72,9 +72,9 @@ def bypass_2fa(driver):
         yes_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Yes, this is my device')]")))
         time.sleep(1)
         yes_button.click()
-        print("2FA bypass successful.")
+        print("2FA verification successful.")
     except:
-        print("2FA bypass not required or failed.")
+        print("2FA verification not required or failed.")
 
 def register_classes(driver, semester, reg_time):
     try:
@@ -109,7 +109,7 @@ def register_classes(driver, semester, reg_time):
             print(f"Could not click {cart} button")
 
         try:
-            reg_text = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "ps_box-value")))
+            reg_text = wait.until(EC.presence_of_element_located((By.ID, "TERM_VAL_TBL_DESCR")))
 
             reg_semester = reg_text.text.strip()
             print(reg_semester) 
@@ -117,22 +117,19 @@ def register_classes(driver, semester, reg_time):
         except Exception as e:
             print(f"Error finding semester element: {e}")
 
-
-
         if reg_semester != semester:
             change_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[@id='DERIVED_SSR_FL_SSR_CHANGE_BTN' and contains(@class, 'ps-button')]")))
             WebDriverWait(driver, 2)
             change_button.click()
 
-            choose_sem = wait.until(EC.element_to_be_clickable((By.XPATH, f"//button[contains(text(), '{semester}')]"))) 
+            choose_sem = wait.until(EC.element_to_be_clickable((By.LINK_TEXT, semester)))
             choose_sem.click()
 
         actual_cart = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'Shopping Cart')]")))
         actual_cart.click()
 
         try:
-            actual_cart = wait.until(EC.element_to_be_clickable((
-                By.XPATH, "//a[contains(text(), 'Shopping Cart')]")))
+            actual_cart = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'Shopping Cart')]")))
             actual_cart.click()
             time.sleep(2)
         except Exception as e:
@@ -145,7 +142,6 @@ def register_classes(driver, semester, reg_time):
         print("Clicking Enroll button...")
         enroll_button.click()
         time.sleep(3)
-
 
     except Exception as e:
         print(f"Error in register_classes: {e}")
