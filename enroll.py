@@ -112,7 +112,6 @@ def register_classes(driver, semester, reg_time):
             reg_text = wait.until(EC.presence_of_element_located((By.ID, "TERM_VAL_TBL_DESCR")))
 
             reg_semester = reg_text.text.strip()
-            print(reg_semester) 
 
         except Exception as e:
             print(f"Error finding semester element: {e}")
@@ -122,14 +121,11 @@ def register_classes(driver, semester, reg_time):
             WebDriverWait(driver, 2)
             change_button.click()
 
-            choose_sem = wait.until(EC.element_to_be_clickable((By.LINK_TEXT, semester)))
+            choose_sem = wait.until(EC.element_to_be_clickable((By.XPATH, f"//a[contains(@id, 'SSR_ENTRMCUR_VW_TERM_DESCR') and contains(text(), '{semester.split()[1]}')]")))
             choose_sem.click()
 
-        actual_cart = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'Shopping Cart')]")))
-        actual_cart.click()
-
         try:
-            actual_cart = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'Shopping Cart')]")))
+            actual_cart = wait.until(EC.element_to_be_clickable((By.ID, "SCC_LO_FL_WRK_SCC_VIEW_BTN$0")))
             actual_cart.click()
             time.sleep(2)
         except Exception as e:
