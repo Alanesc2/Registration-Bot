@@ -1,6 +1,6 @@
-# ASU Registration Bot
+# University Registration Bot
 
-An automated tool for registering classes at Arizona State University (ASU) at a specified time.
+An automated tool for registering classes within Arizona State University's enrollment system at a specified time.
 
 ## About
 
