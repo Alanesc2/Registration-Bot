@@ -1,12 +1,12 @@
 # University Registration Bot
 
-An automated tool for registering classes within Arizona State University's enrollment system at a specified time.
+An automated tool for registering classes within an enrollment system at a specified time.
 
 ## About
 
 Registering for next semester's courses is crucial to securing a flexible schedule and fulfilling academic requirements. However, many students forget to enroll on time due to a lack of reminders or the inconvenient early morning registration times (often at 6 AM). Missing registration by even a few seconds can force students into less desirable class times or prevent them from enrolling in required courses.
 
-This bot was developed to automate the registration process, inspired by my own struggles and those of my peers. It utilizes Python, Selenium, and Web Scraping to enroll in classes instantly when registration opens.
+This bot was developed to automate the registration process, inspired by my own struggles. It utilizes Python, Selenium, and Web Scraping to enroll in classes instantly when registration opens.
 
 ## Features
 
